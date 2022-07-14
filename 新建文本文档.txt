@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <table border=5>
+    <tbody>
+      <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+      </tr>
+      
+      <tr>
+        <td>a</td>
+        <td  rowspan=2 colspan=2>a</td>
+        <td rowspan=3>aaa</td>
+        <td>a</td>
+        
+      </tr>
+      
+      <tr>
+        <td>a</td>
+        <td>a</td>
+      
+       
+        
+        
+      </tr>
+      
+      <tr>
+        <td>a</td>
+        <td rowspan=3 >a</td>
+        <td>aaaaaa</td>
+        <td>a</td>
+       
+      </tr>
+      
+      <tr>
+        <td>a</td>
+        <td colspan=3>a</td>
+        
+        
+      </tr>
+      
+       <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        
+      </tr>
+      
+       <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td> 
+      </tr>
+      
+       <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td> 
+      </tr>
+      
+       <tr>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td>
+        <td>a</td> 
+      </tr>
+      
+        
+</html>
