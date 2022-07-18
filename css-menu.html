@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body, ul, li {
+      margin: 0;
+      padding: 0;
+
+      list-style: none;
+      color: rgb(87, 87, 87);
+    }
+
+    div {
+      position: relative;
+      background-color: rgb(50,50,51);
+      padding: 3px;
+      min-width: 800px;
+      width: 100vw;
+      height: 30px;
+      
+      
+      box-sizing: border-box;
+    }
+
+
+
+    div .items > li{
+      float: left;
+      margin-left: 20px;
+
+      height: 24px;
+
+      line-height: 24px;
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .items > li:hover {
+    background-color: rgb(205, 205, 205);
+    }
+
+
+    .file:hover > .subMenu{
+      display: block;
+    }
+
+    div .file span {
+      position: relative;
+    }
+    div .subMenu {
+      position: absolute;
+      top: 25px;
+
+      display: none;
+      width: 300px;
+      padding: 10px 0;
+      background-color: #fff;
+      box-shadow: 1px 0px 3px grey, 0 1px 3px grey;
+      border-radius: 5px;
+    }
+
+    div .subMenu li{
+      padding: 0 10px;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    div .subMenu li:hover {
+      color: white;
+      background-color: rgb(0, 96, 192);
+    }
+
+    div .subMenu li span:first-child {
+      float: left;
+    }
+
+    .fl{
+      float: right;
+    }
+
+
+
+    div .openRecent {
+      position: relative;
+    }
+
+
+    div .openRecent:hover > .subSubMenu {
+      display: block;
+    }
+    div .subSubMenu {
+      position: absolute;
+      top: -10px;
+      left: 300px;
+
+      display: none;
+      padding: 10px 10px;
+      width: 120px;
+
+      box-shadow: 1px 0px 3px grey, 0 1px 3px grey;
+      border-radius: 5px;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <div>
+    <ul class="items">
+
+      <li class="file"><span>文件</span>
+
+        <ul class="subMenu">
+          <li><span>新建文件</span><span class="fl">Ctrl+N</span></li>
+          <li><span>打开文件</span><span class="fl">Ctrl+O</span></li>
+          <li><span>新建窗口</span><span class="fl">Ctrl+Shift+N</span></li>
+
+          <li class="openRecent">
+
+            <span>首选项</span>
+            <span class="fl">></span>
+
+            <ul class="subSubMenu">
+              <li>设置</li>
+              <li>拓展</li>
+              <li>颜色主题</li>
+              <li>产品图标主题</li>
+            </ul>
+
+          </li>
+        </ul>
+
+      </li>
+      <li>编辑</li>
+      <li>选择</li>
+      <li>查看</li>
+      <li>转到</li>
+      <li>运行</li>
+      <li>终端</li>
+      <li>帮助</li>
+    </ul>
+  </div>
+</body>
+</html>
