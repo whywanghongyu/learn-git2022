@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;/*是一种布局方式。它即可以应用于容器中，也可以应用于行内元素*/
+            justify-content: center;/*水平）对齐弹性容器的项目居中*/
+            align-items: center;/*使元素居中,在交叉轴上居中对齐*/
+        }
+
+        label {
+            transform: scale(2);/*缩放，放大2倍*/
+            height: 50px;
+            width: 100px;
+            border: solid 1px #ddd; 
+            border-radius: 25px;
+            position: relative;
+            background-color: #ddd;
+            overflow: hidden;/*溢出隐藏,将背景的方形变成圆形*/
+        }
+        
+        label input {
+            visibility: hidden;/*元素会被隐藏，但是不会消失，依然占据空间 (元素不可见)*/
+        }
+
+        label input::after{
+            content: '';
+            visibility: visible;/*元素可见*/
+            position: absolute;
+            width:40px;
+            height: 40px;
+            left: 5px;
+            top: 5px;
+            background-color: rgb(253, 255, 255);
+            border-radius: 50%;
+        }
+
+        label input:checked::after {
+            transition: all ease-in-out 0.3s;
+            transform: translate(50px);/*将元素按坐标轴平移50像素*/
+        }
+
+        label input::before{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            left: 0;
+            top: 0;
+            visibility: visible;
+            transition: all ease-in-out 0.3s;
+        }
+
+        label input:checked::before{
+            background-color: rgb(85, 218, 129);
+        }
+
+        label input:active::after{
+            width: 60px;
+        }
+
+        label input:checked::after {
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+<body>
+    <label>
+        <input type="checkbox" class="checkbox">
+    </label>
+</body>
+</html>

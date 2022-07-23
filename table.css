@@ -1,0 +1,145 @@
+.table {
+  width:100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  border-bottom: 2px solid black;
+}
+
+.table tr{
+  border-bottom: 1px solid grey;
+}
+
+.table th, .table td {
+  padding: 0.5em;
+}
+
+
+
+
+.table-striped {
+  width:100%;
+  border-collapse: collapse;
+}
+
+.table-striped thead {
+  border-bottom: 2px solid black;
+}
+
+.table-striped tr{
+  border-bottom: 1px solid grey;
+}
+
+.table-striped th, .table-striped td {
+  padding: 0.5em;
+}
+
+.table-striped tbody tr:nth-child(odd){
+  background-color: grey;
+}
+
+
+
+.table-hover {
+  width:100%;
+  border-collapse: collapse;
+}
+
+.table-hover thead {
+  border-bottom: 2px solid black;
+}
+
+.table-hover tr{
+  border-bottom: 1px solid grey;
+}
+
+.table-hover th, .table-hover td {
+  padding: 0.5em;
+}
+
+.table-hover tbody tr:hover {
+  background-color:  grey;
+}
+
+
+
+.table-bordered {
+  width:100%;
+  border-collapse: collapse;
+}
+
+.table-bordered thead {
+  border-bottom: 2px solid black;
+}
+
+.table-bordered tr{
+  border-bottom: 1px solid grey;
+}
+
+.table-bordered th, .table-bordered td {
+  padding: 0.5em;
+  border: 1px solid green;
+}
+
+
+
+
+.table-borderless {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table-borderless thead tr {
+    border: none;
+  }
+  .table-borderless td,
+  .table-borderless th {
+    padding: 0.5em 0.5em;
+    text-align: left;
+  }
+
+
+
+.table-dark {
+    background-color: black;
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-dark thead {
+    border-bottom: white 2px solid;
+  }
+
+  .table-dark td,
+  .table-dark th {
+    padding: 0.5em 0.5em;
+    text-align: left;
+  }
+
+  .table-dark tr {
+    border-bottom: white 1px solid;
+  }
+
+  .table-dark tbody tr:hover {
+    background-color: white;
+  }
+
+
+ 
+
+.table-sm {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .table-sm thead {
+    border-bottom: #212529 2px solid;
+  }
+  .table-sm td,
+  .table-sm th {
+    padding: 0.25em 0.25em;
+    text-align: left;
+  }
+  .table-sm tr {
+    border-bottom: #dee2e6 1px solid;
+  }
