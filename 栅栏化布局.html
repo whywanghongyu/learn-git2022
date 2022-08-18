@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            flex-direction: column;
+            height: 450px;
+            width: 660px;
+            overflow: hidden;
+        }
+
+        .parent section {
+            border-radius: 10px;
+            height: 200px;
+            width: 200px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border: 1px solid black;
+            background-color: rgb(94, 147, 197);
+            box-shadow: red;
+        }
+
+        .parent section:first-child {
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <section class="parent">
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+        <section>4</section>
+        <section>5</section>
+    </section>
+</body>
+</html>

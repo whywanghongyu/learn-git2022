@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,user-scalable=no">
+    <title>响应式布局</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #head,#main,#foot {
+            height: 100px;
+            width: 1200px;
+            background-color: cadetblue;
+            text-align: center;
+            line-height: 100px;
+            font-size: 36px;
+            margin: 0 auto;
+        }
+
+        
+        #head ul {
+            width: 80%;
+        } 
+
+        #head ul li {
+            width: 20%;
+            float: left;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #main {
+            height: auto;
+            margin: 10px auto;
+            overflow: auto;
+        }
+
+        .left, .center, .right {
+            height: 600px;
+            width: 20%;
+            line-height: 600px;
+            float: left;
+            background-color: red;
+        }
+
+        .center {
+            width: 60%;
+            border-left: 10px solid #fff;
+            border-right: 10px solid #fff;
+            box-sizing: border-box;
+        }
+
+        @media screen and (max-width: 1200px)  {
+            #head,#main,#foot {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 980px) {
+            .left {
+                width: 30%;
+            }
+
+            .center {
+                width: 70%;
+            }
+
+            .right {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+            .left,.center,.right {
+                height: 200px;
+                line-height: 200px;
+                width: 100%;
+                display: block;
+            }
+            .center {
+                border-top: 10px solid #fff;
+                border-bottom: 10px solid #fff;
+                border-left: 0;
+                border-right: 0;
+                height: 600px;
+                line-height: 600px;
+            }
+            #head ul {
+                display: none;
+            }
+            
+        }
+
+
+
+        
+
+    </style>
+</head>
+<body>
+    <div>
+        <header id="head">
+            <ul>
+                <li>header1</li>
+                <li>header2</li>
+                <li>header2</li>
+                <li>header2</li>
+                <li>header2</li>
+            </ul>
+            <div>icon</div>
+        </header>
+        <section id="main">
+            <div class="left">
+                left
+            </div>
+            <div class="center">
+                center
+            </div>
+            <div class="right">
+                right
+            </div>
+        </section>
+        <footer id="foot">
+            footer
+        </footer>
+    </div>
+</body>
+</html>

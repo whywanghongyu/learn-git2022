@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html ,body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            perspective: 10000px;
+            margin: 250px auto;
+        }
+
+        @keyframes rotate3d {
+            from{
+                transform:rotateX(0deg) rotateY(0deg);
+            }
+
+            to{
+                transform:rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+
+        .one {
+            width: 200px;
+            height: 200px;
+            perspective: 10000px;
+            transform-style: preserve-3d;
+            position: relative;
+            animation: rotate3d 60s  infinite ;
+        }
+
+
+        .one > div {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .front {
+            transform: translateZ(100px);
+            background-color: rgb(129, 190, 243);
+        }
+
+        .back {
+            transform: translateZ(-100px);
+            background-color: rgb(163, 26, 16);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+            background-color: rgb(231, 235, 22);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: rgb(169, 194, 113);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: rgb(30, 27, 201);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+            background-color: rgb(155, 33, 192);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="one">
+           <div class="front"></div>
+           <div class="back"></div>
+           <div class="left"></div>
+           <div class="right"></div>
+           <div class="top"></div>
+           <div class="bottom"></div>
+        </div>
+    </div>
+</body>
+</html>
