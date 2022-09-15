@@ -8,6 +8,7 @@ var whywanghongyu = {
                 result.push(ary[i])
             }
         }
+        return result
     },
 
 
