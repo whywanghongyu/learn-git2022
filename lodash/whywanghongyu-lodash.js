@@ -1,5 +1,5 @@
 
-/*var whywanghongyu = {
+var whywanghongyu = {
 
     compact: function (ary) {
         var result = []
@@ -8,7 +8,7 @@
                 result.push(ary[i])
             }
         }
-    },*/
+    },
 
 
 
@@ -37,11 +37,11 @@
 
         }
         return b
-    }
+    },
 
 
 
-    /*fill:function (ary, value, [start = 0], [end = ary.length]) {
+    fill:function (ary, value, [start = 0], [end = ary.length]) {
         for (var i = start; i < end; i++) {
             ary[i] = value
         }
@@ -96,7 +96,7 @@
 
             var res = []
         }
-    }
+    },
 
 
-},
+}
