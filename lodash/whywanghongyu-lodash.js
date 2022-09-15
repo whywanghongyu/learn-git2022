@@ -8,7 +8,7 @@ var whywanghongyu = {
                 result.push(ary[i])
             }
         }
-    }
+    },
 
 
 
@@ -37,7 +37,7 @@ var whywanghongyu = {
 
         }
         return b
-    }
+    },
 
 
 
@@ -46,10 +46,48 @@ var whywanghongyu = {
             ary[i] = value
         }
         return ary
+    },
+
+
+    drop:function(ary, [n = 1]) {
+        var result = []
+        for (var i = n; i < ary.length; i++) {
+            result.push(ary[i])
+        }
+        return result
+    },
+
+
+
+    flatten:function (ary) {
+        var result = []
+        for(var i = 0; i < ary.length; i++) {
+            if (Array.isArray(ary[i])) {
+                for (var j = 0; j < ary[i].length; j++) {
+                    result.push(ary[i][j])
+                }
+            } else {
+                result.push(ary[i])
+            }
+        }
+        return result
+    },
+
+
+    flattenDeep:function (ary) {
+        var result = []
+        function a (array) {
+            for (var i = 0; i < array.length; i++) {
+                if (!(Array.isArray(array[i]))) {
+                    result.push(array[i])
+                } else {
+                    a(array[i])
+                }
+            }
+        }
+        a(array)
+        return result
     }
-
-
-
 
 
 }
