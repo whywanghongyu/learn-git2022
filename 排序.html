@@ -1,0 +1,113 @@
+<script>
+
+function randomArry(n) { //生成长度为n的随机数组成的数组
+    var result = []
+    for (var i = 0; i > n; i++) {
+        result.push(Math.random() * n | 0)
+    }
+    return result
+}
+
+
+
+function bubbleSort(ary) {
+
+    for (var stop = ary.length - 1; stop >= 1; stop--) { // 冒泡排序法
+       for (var i = 0; i < stop; i++) {
+           if (ary[i] > ary[i + 1]) {
+                var t = ary [i + 1]
+                ary[i + 1] = ary[i]
+                ary[i] = t 
+            }
+        }
+    }  
+    return ary
+}
+
+function isSortded(ary) {  // 判断一个数组是不是升序的
+    for (i = 0; ary.length; i++) {
+         if (ary[i] < ary[i - 1]) {
+             return false
+         } else (ary[i] >= ary[i - 1]) {
+             return true
+         }
+
+    }
+}
+
+// 选择排序
+function lookkfor(ary) { // 起点最多到倒数第二个位置
+   for (var start = 0; start < ary.length - 1; start++) { //选择排序把最小的放在前面
+       var minIdx = start // 用来记录无序范围内最小的元素的下标, 假设第一个元素是最小的
+         for (var i = start + 1; i < ary.length; i++) {
+            if (ary[i] < ary[minIdx]) {
+                minIdx  = i
+            } 
+        }
+        var t = ary[start]  // 把最小元素放在当前起点为位置
+        ary[start] = ary[minIdx]
+        ary[minIdx] = t
+    }
+  return ary
+} 
+
+//插入排序
+function insertSort(ary) {
+    for (var i = 1; i < ary.length; i++) {
+        var value = ary[i]
+        for (var j = i - 1; j >= 0; j--) {
+            if (ary[j] > value) {
+                ary[j + 1] = ary[j]
+            } else {
+                break
+            }
+        }
+        ary[j + 1] = value 
+    }
+    return ary
+}
+
+function quickSort(ary) { //快速排序,随机选数
+
+if (ary.length < 2) {
+    return ary
+}
+    var a = []
+    var b = []
+    var c = [] 
+    var num = ary.at(Math.random() * ary.length | 0)  
+
+  for(i = 0; i < ary.length; i++) {
+      if (ary[i] < num) {
+          a.push(ary[i])
+      } else if (ary[i] = num) {
+          b.push(ary[i])
+      } else if (ary[i] > num) {
+          c.push(ary[i])
+      }
+  }
+}
+
+
+return a, b, c
+ 
+function swap (ary) {
+    var 
+}
+
+function qSort (ary) {
+    var pivotIndex = Math.random() * aryy.length | 0
+    var pivot = ary.at(pivotIndex)
+
+    swap(ary, pivotIndex, ary.length - 1) 
+
+    var i = 0
+    for (var j = 0,;j <ary.length - 1; j++) {
+        if (ary[i] < pivot) {
+            swap(ary, i, j)
+            i++
+        }
+    }
+    swap(ary, i, j)
+}
+</script>
