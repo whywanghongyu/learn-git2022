@@ -60,7 +60,7 @@ var whywanghongyu = {
 
 
 
-    flatten:function (ary) {
+    flatten:function (ary) { //对数组进行一组扁平化处理
         var result = []
         for(var i = 0; i < ary.length; i++) {
             if (Array.isArray(ary[i])) {
@@ -75,7 +75,7 @@ var whywanghongyu = {
     },
 
 
-    flattenDeep:function (array) {
+    flattenDeep:function (array) { //对数组进行完全扁平化处理
         var result = []
         function a (array) {
             for (var i = 0; i < array.length; i++) {
@@ -92,12 +92,60 @@ var whywanghongyu = {
 
 
 
-    fattenDepth:function (ary, depth = 1) {
+    fattenDepth:function (ary, depth = 1) { // 对数组进行指定层级的扁平化处理
         for (var k = 0; k < depth; k++) {
 
             var res = []
+            var hasarray = false
+            for (var i = 0; i <ary.length; i++) {
+                var a = ary[i]
+                if (Array.isArray(a)) {
+                    hasarray = true
+                    for (var j = 0; j < a.length; j++) {
+                        res.push(a[j])
+                    }
+                } else {
+                    res.push(a)
+                }
+            }
+            if (!hasarray) {
+                break
+            }
+            ary = res
         }
+        return res
     },
+
+
+
+    fromPairs:function (pairs) { //返回键值组成的对象
+        var obj = {}
+        for (var i = 0; i < pairs.length; i++) {
+            obj[pairs[i][0]] = pairs[i][1]
+        }
+        return obj
+    },
+
+
+    head:function (array) {
+        if (array.length == 0) {
+            return undefined
+        } else {
+            return array[0]
+        }
+    },    
+
+
+
+    indexOf:function (array, value, fromIndex = 0) {
+        for (var i = fromIndex; i < array.length; i++) {
+            if (array[i] == value) {
+            return i
+            }
+        }
+        return -1
+    }
+
 
 
 }
