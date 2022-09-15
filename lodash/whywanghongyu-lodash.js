@@ -42,7 +42,7 @@ var whywanghongyu = {
 
 
 
-    fill:function (ary, value, [start = 0], [end = ary.length]) {
+    fill:function (ary, value, start = 0, end = ary.length) {
         for (var i = start; i < end; i++) {
             ary[i] = value
         }
@@ -50,7 +50,7 @@ var whywanghongyu = {
     },
 
 
-    drop:function(ary, [n = 1]) {
+    drop:function(ary, n = 1) {
         var result = []
         for (var i = n; i < ary.length; i++) {
             result.push(ary[i])
@@ -75,7 +75,7 @@ var whywanghongyu = {
     },
 
 
-    flattenDeep:function (ary) {
+    flattenDeep:function (array) {
         var result = []
         function a (array) {
             for (var i = 0; i < array.length; i++) {
