@@ -1,18 +1,18 @@
 
-var whywanghongyu = {
+/*var whywanghongyu = {
 
-    compact:function (ary) {
+    compact: function (ary) {
         var result = []
         for (var i = 0; i < ary.length; i++) {
             if (ary[i]) {
                 result.push(ary[i])
             }
         }
-    },
+    },*/
 
 
 
-    chunk:function (ary, size) {
+    chunk: function (ary, size) {
         var a = []
         var b = []
 
@@ -37,11 +37,11 @@ var whywanghongyu = {
 
         }
         return b
-    },
+    }
 
 
 
-    fill:function (ary, value, [start = 0], [end = ary.length]) {
+    /*fill:function (ary, value, [start = 0], [end = ary.length]) {
         for (var i = start; i < end; i++) {
             ary[i] = value
         }
@@ -87,7 +87,16 @@ var whywanghongyu = {
         }
         a(array)
         return result
+    },
+
+
+
+    fattenDepth:function (ary, depth = 1) {
+        for (var k = 0; k < depth; k++) {
+
+            var res = []
+        }
     }
 
 
-}
+},
