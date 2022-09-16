@@ -127,7 +127,7 @@ var whywanghongyu = {
     },
 
 
-    head:function (array) {
+    head:function (array) { // 输出头部第一个元素
         if (array.length == 0) {
             return undefined
         } else {
@@ -137,15 +137,79 @@ var whywanghongyu = {
 
 
 
-    indexOf:function (array, value, fromIndex = 0) {
+    indexOf:function (array, value, fromIndex = 0) { //输出和val相同的第from个值
         for (var i = fromIndex; i < array.length; i++) {
             if (array[i] == value) {
             return i
             }
         }
         return -1
-    }
+    },
 
 
+
+    lastIndexOf:function(array, value, fromIndex = Array.length - 1) {
+        for (var i = fromIndex; i >= 0; i--) {
+            if (array[i] == value) {
+                return i
+            }
+        }
+        return -1
+    },
+
+
+    initial:function(array) { //输出一个除最后一个元素外的所有元素
+        var result = []
+
+        for (var i = 0; i < array.length - 1; i++) {
+            result.push(array[i])
+        }
+
+        return result
+    },
+
+
+    join:function(array, separator=",") { //将数组中的元素转换为以sep为分隔符的字符串
+        var result = "" + array[0]
+
+        for (var i = 1; i < array.length; i++) {
+            result = result + separator + array[i]
+        }
+
+        return result
+    },
+
+
+    last:function(array) { // 输出最后一个元素
+        return array[array.length - 1]
+    },
+
+
+    pull:function(array, values) { // 删掉数组中和val相同的值,输出剩下的数
+        var result =[]
+
+        for (var i = 0; i < array.length; i++) {
+            if (!(array[i] == values)) {
+                result.push(array[i])
+            }
+        }
+        return result
+    },
+
+
+    reverse:function(array) { //使第一个元素成为最后一个元素，第二个元素成为倒数第二个元素，依此类推。
+        var left = 0
+        var right = array.length - 1
+
+        while (left < right) {
+            var temp = array[left]
+            array[left] = array[right]
+            array[right] = temp
+
+            left++
+            right--
+        }
+        return array
+    },
 
 }
