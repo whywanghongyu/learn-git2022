@@ -148,7 +148,7 @@ var whywanghongyu = {
 
 
 
-    lastIndexOf:function(array, value, fromIndex = Array.length - 1) {
+    lastIndexOf:function(array, value, fromIndex = array.length - 1) {
         for (var i = fromIndex; i >= 0; i--) {
             if (array[i] == value) {
                 return i
@@ -189,7 +189,7 @@ var whywanghongyu = {
         var result =[]
 
         for (var i = 0; i < array.length; i++) {
-            if (!(array[i] == values)) {
+            if ((array[i] !== values)) {
                 result.push(array[i])
             }
         }
