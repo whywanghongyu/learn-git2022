@@ -189,7 +189,7 @@ var whywanghongyu = {
         var result =[]
 
         for (var i = 0; i < array.length; i++) {
-            if ((array[i] !== values)) {
+            if (!(values.includes(array[i]))) {
                 result.push(array[i])
             }
         }
@@ -211,5 +211,102 @@ var whywanghongyu = {
         }
         return array
     },
+
+
+    every:function(collection, predicate) {  // 如果数组中的每个元素传给predicate后面都返回真, 则every返回真, 否则返回假
+        for (var i = 0; i < collection.length; i++) {
+            if (!predicate(collection[i], i, collection)) {
+                return false
+            }
+        }
+        return true
+    },
+
+
+    some:function(collection, predicate) {  // 如果数组中的某个元素传给predicate后面都返回真, 则some返回真, 否则返回假
+        for (var i = 0; i < collection.length; i++) {
+            if (predicate(collection[i], i, collection)) {
+                return true
+            }
+        }
+        return false
+    },
+
+
+    countBy:function(ary, predicate) { // 计算数组中每个元素的出现
+        var a = ary.length
+        var result = {}
+
+        for (var i = 0; i < a; i++) {
+            if (typeof predicate == "function") {
+                var num = predicate(ary[i])
+            }
+            if (typeof predicate == "string") {
+                var num = 0
+                for (var j = 0; j < ary[i].length; j++) {
+                    num++
+                }
+            }
+            if (!(num in result)) {
+                result[num] = 0
+            }
+            result[num]++
+        }
+        return result
+    },
+
+
+
+    forEach:function (collection, predicate) { //对数组的每个元素进行一次提供的函数
+        if (Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                predicate(collection[i], i, collection)
+            }
+        }
+
+        if (typeof collection == "object") {
+            for (var key in collection) {
+                predicate(collection[key], key, collection) 
+            }
+        }
+
+        return collection
+    },
+
+
+
+    map:function(collection, iteratee) { //返回新的映射数组
+        var result = []
+
+        if (Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                var item = collection[i]
+                
+                if (typeof(iteratee) == "string") {
+                    var a = iteratee.split(".")
+                    for (var i = 0; i < a.length; i++) {
+                        item = item[a[i]]
+                    }
+                    result.push(item)
+                } else if (typeof(iteratee) == "function") {
+                    result.push(iteratee(item, i, collection))
+                }
+            }
+        } else {
+            for (var key in collection) {
+                var value = collection[key]
+                if (typeof(iteratee) == "string") {
+                    result.push(value[iteratee])
+                } else if (typeof(iteratee) == "function"){
+                    result.push(iteratee(value, key))
+                }
+            }
+        }
+        return result
+    },
+
+
+
+    
 
 }
