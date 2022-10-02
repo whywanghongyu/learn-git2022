@@ -185,8 +185,8 @@ var whywanghongyu = {
     },
 
 
-    pull:function(array, values) { // 删掉数组中和val相同的值,输出剩下的数
-        var result =[]
+    pull:function(array, ...values) { // 删掉数组中和val相同的值,输出剩下的数
+        var result =  []                                                                       []
 
         for (var i = 0; i < array.length; i++) {
             if (!(values.includes(array[i]))) {
@@ -215,7 +215,7 @@ var whywanghongyu = {
 
     every:function(collection, predicate) {  // 如果数组中的每个元素传给predicate后面都返回真, 则every返回真, 否则返回假
         for (var i = 0; i < collection.length; i++) {
-            if (!predicate(collection[i], i, collection)) {
+            if (!find(collection[i], i, predicate)) {
                 return false
             }
         }
@@ -282,22 +282,22 @@ var whywanghongyu = {
             for (var i = 0; i < collection.length; i++) {
                 var item = collection[i]
                 
-                if (typeof(iteratee) == "string") {
+                if (typeof(iteratee) === "string") {
                     var a = iteratee.split(".")
                     for (var i = 0; i < a.length; i++) {
                         item = item[a[i]]
                     }
                     result.push(item)
-                } else if (typeof(iteratee) == "function") {
+                } else if (typeof(iteratee) === "function") {
                     result.push(iteratee(item, i, collection))
                 }
             }
         } else {
             for (var key in collection) {
                 var value = collection[key]
-                if (typeof(iteratee) == "string") {
+                if (typeof(iteratee) === "string") {
                     result.push(value[iteratee])
-                } else if (typeof(iteratee) == "function"){
+                } else if (typeof(iteratee) === "function"){
                     result.push(iteratee(value, key))
                 }
             }
@@ -305,6 +305,76 @@ var whywanghongyu = {
         return result
     },
 
+
+    sortedIndex:function(array, value) {
+        var left = 0
+        var right = array.length - 1
+
+        while (left < right) {
+            var mid = Math.floor((left + right) / 2)
+
+            if (value > array[mid]) {
+                left = mid
+            } else (value < array[mid]) {
+                right = mid - 1
+            }
+        }
+        return right
+    },
+
+
+
+    union:function(...arrays) {
+        var result = []
+        var map = {}
+        for (var array of arrays) {
+            for (var item of array) {
+                if (!map[item]) {
+                    map[item] = 1
+                    result.push(item)
+                }
+            }
+        }
+        return result
+    },
+
+    
+    uniq:function(array) {
+        var result = []
+        for (var item of array) {
+            if (!result.includes(item)) {
+                result.push(item)
+            }
+        }
+        return result
+    },
+
+
+
+    without:function(array, values) {
+        var result = {}
+        for (var item of array) {
+            if (!values.includes(item)) {
+                result.push(item)
+            }
+        }
+        return result
+    },
+
+
+    forEach:function(collection, action) {
+        if(Array.isArray(collection)) {
+            for (var i = 0; i < collection.length; i++) {
+                action(collection[i], i , collection)
+            }
+        }
+        if(typeof collection == "Object") {
+            for (var key in collection) {
+                action(collection[key], key, collection)
+            }
+        }
+        return collection
+    },
 
 
     
